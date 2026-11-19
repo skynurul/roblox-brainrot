@@ -1,10 +1,15 @@
 {
-  "name": "house-dodge",
+  "name": "ramen-riot",
   "tree": {
     "$className": "DataModel",
     "Players": {
       "$properties": {
-        "CharacterAutoLoads": false
+        "CharacterAutoLoads": true
+      }
+    },
+    "ReplicatedStorage": {
+      "Shared": {
+        "$path": "src/shared"
       }
     },
     "ServerScriptService": {
@@ -28,11 +33,12 @@
         "$properties": {
           "Anchored": true,
           "Color": [
-            0.38823,
-            0.37254,
-            0.38823
+            0.12,
+            0.12,
+            0.16
           ],
           "Locked": true,
+          "Material": "SmoothPlastic",
           "Position": [
             0,
             -10,
@@ -44,24 +50,2266 @@
             512
           ]
         }
-      }
-    },
-    "Lighting": {
-      "$properties": {
-        "Ambient": [
-          0,
-          0,
-          0
-        ],
-        "Brightness": 2,
-        "GlobalShadows": true,
-        "Outlines": false,
-        "Technology": "Voxel"
-      }
-    },
-    "SoundService": {
-      "$properties": {
-        "RespectFilteringEnabled": true
+      },
+      "Conveyor": {
+        "$className": "Folder",
+        "Belt": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.25,
+              0.25,
+              0.3
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              0,
+              0.5,
+              0
+            ],
+            "Size": [
+              12,
+              1,
+              110
+            ]
+          }
+        },
+        "BeltStripe": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.85,
+              0.25,
+              0.2
+            ],
+            "Material": "Neon",
+            "Position": [
+              0,
+              1.05,
+              0
+            ],
+            "Size": [
+              2,
+              0.1,
+              110
+            ]
+          }
+        },
+        "RailLeft": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.5,
+              0.35,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -6.5,
+              1,
+              0
+            ],
+            "Size": [
+              1,
+              2,
+              110
+            ]
+          }
+        },
+        "RailRight": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.5,
+              0.35,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              6.5,
+              1,
+              0
+            ],
+            "Size": [
+              1,
+              2,
+              110
+            ]
+          }
+        },
+        "EndNorth": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.85,
+              0.25,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              0,
+              1.5,
+              -55
+            ],
+            "Size": [
+              14,
+              3,
+              2
+            ]
+          }
+        },
+        "EndSouth": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.85,
+              0.25,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              0,
+              1.5,
+              55
+            ],
+            "Size": [
+              14,
+              3,
+              2
+            ]
+          }
+        }
+      },
+      "Stalls": {
+        "$className": "Folder",
+        "Stall1": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                1.5,
+                -45
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -31,
+                4,
+                -45
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.85,
+                0.15,
+                0.15
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                8.5,
+                -45
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.85,
+                0.15,
+                0.15
+              ],
+              "Material": "Neon",
+              "Position": [
+                -26,
+                5,
+                -45
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall2": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                1.5,
+                -15
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -31,
+                4,
+                -15
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.5,
+                0.1
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                8.5,
+                -15
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.5,
+                0.1
+              ],
+              "Material": "Neon",
+              "Position": [
+                -26,
+                5,
+                -15
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall3": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                1.5,
+                15
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -31,
+                4,
+                15
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.8,
+                0.1
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                8.5,
+                15
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.8,
+                0.1
+              ],
+              "Material": "Neon",
+              "Position": [
+                -26,
+                5,
+                15
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall4": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                1.5,
+                45
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -31,
+                4,
+                45
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.7,
+                0.3
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -28,
+                8.5,
+                45
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.7,
+                0.3
+              ],
+              "Material": "Neon",
+              "Position": [
+                -26,
+                5,
+                45
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall5": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                1.5,
+                -45
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                31,
+                4,
+                -45
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.45,
+                0.95
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                8.5,
+                -45
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.45,
+                0.95
+              ],
+              "Material": "Neon",
+              "Position": [
+                26,
+                5,
+                -45
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall6": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                1.5,
+                -15
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                31,
+                4,
+                -15
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.6,
+                0.3,
+                0.9
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                8.5,
+                -15
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.6,
+                0.3,
+                0.9
+              ],
+              "Material": "Neon",
+              "Position": [
+                26,
+                5,
+                -15
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall7": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                1.5,
+                15
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                31,
+                4,
+                15
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.4,
+                0.7
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                8.5,
+                15
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.95,
+                0.4,
+                0.7
+              ],
+              "Material": "Neon",
+              "Position": [
+                26,
+                5,
+                15
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        },
+        "Stall8": {
+          "$className": "Folder",
+          "Counter": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.5,
+                0.32,
+                0.18
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                1.5,
+                45
+              ],
+              "Size": [
+                3,
+                3,
+                8
+              ]
+            }
+          },
+          "BackWall": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.4,
+                0.25,
+                0.2
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                31,
+                4,
+                45
+              ],
+              "Size": [
+                1,
+                8,
+                8
+              ]
+            }
+          },
+          "Roof": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.1,
+                0.75,
+                0.75
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                28,
+                8.5,
+                45
+              ],
+              "Size": [
+                6,
+                1,
+                10
+              ]
+            }
+          },
+          "Sign": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.1,
+                0.75,
+                0.75
+              ],
+              "Material": "Neon",
+              "Position": [
+                26,
+                5,
+                45
+              ],
+              "Size": [
+                0.5,
+                2,
+                4
+              ]
+            }
+          }
+        }
+      },
+      "StallPads": {
+        "$className": "Folder",
+        "Pad1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.85,
+              0.15,
+              0.15
+            ],
+            "Material": "Neon",
+            "Position": [
+              -21,
+              0.25,
+              -45
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.95,
+              0.5,
+              0.1
+            ],
+            "Material": "Neon",
+            "Position": [
+              -21,
+              0.25,
+              -15
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.95,
+              0.8,
+              0.1
+            ],
+            "Material": "Neon",
+            "Position": [
+              -21,
+              0.25,
+              15
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.2,
+              0.7,
+              0.3
+            ],
+            "Material": "Neon",
+            "Position": [
+              -21,
+              0.25,
+              45
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.2,
+              0.45,
+              0.95
+            ],
+            "Material": "Neon",
+            "Position": [
+              21,
+              0.25,
+              -45
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad6": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.6,
+              0.3,
+              0.9
+            ],
+            "Material": "Neon",
+            "Position": [
+              21,
+              0.25,
+              -15
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad7": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.95,
+              0.4,
+              0.7
+            ],
+            "Material": "Neon",
+            "Position": [
+              21,
+              0.25,
+              15
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        },
+        "Pad8": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "CanCollide": false,
+            "Color": [
+              0.1,
+              0.75,
+              0.75
+            ],
+            "Material": "Neon",
+            "Position": [
+              21,
+              0.25,
+              45
+            ],
+            "Size": [
+              10,
+              0.5,
+              12
+            ],
+            "Transparency": 0.5
+          }
+        }
+      },
+      "Lanterns": {
+        "$className": "Folder",
+        "Lantern1": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -9,
+                3,
+                -40
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                -9,
+                6.5,
+                -40
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern2": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                9,
+                3,
+                -40
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                9,
+                6.5,
+                -40
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern3": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -9,
+                3,
+                -20
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                -9,
+                6.5,
+                -20
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern4": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                9,
+                3,
+                -20
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                9,
+                6.5,
+                -20
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern5": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -9,
+                3,
+                0
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                -9,
+                6.5,
+                0
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern6": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                9,
+                3,
+                0
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                9,
+                6.5,
+                0
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern7": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -9,
+                3,
+                20
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                -9,
+                6.5,
+                20
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern8": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                9,
+                3,
+                20
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                9,
+                6.5,
+                20
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern9": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                -9,
+                3,
+                40
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                -9,
+                6.5,
+                40
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        },
+        "Lantern10": {
+          "$className": "Folder",
+          "Post": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                0.2,
+                0.15,
+                0.12
+              ],
+              "Material": "SmoothPlastic",
+              "Position": [
+                9,
+                3,
+                40
+              ],
+              "Size": [
+                1,
+                6,
+                1
+              ]
+            }
+          },
+          "Light": {
+            "$className": "Part",
+            "$properties": {
+              "Anchored": true,
+              "Color": [
+                1,
+                0.6,
+                0.2
+              ],
+              "Material": "Neon",
+              "Position": [
+                9,
+                6.5,
+                40
+              ],
+              "Shape": "Ball",
+              "Size": [
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        }
+      },
+      "Buildings": {
+        "$className": "Folder",
+        "Building1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.2,
+              0.25
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -60,
+              12,
+              -50
+            ],
+            "Size": [
+              20,
+              24,
+              20
+            ]
+          }
+        },
+        "Building2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.25,
+              0.3,
+              0.4
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -60,
+              16,
+              0
+            ],
+            "Size": [
+              20,
+              32,
+              20
+            ]
+          }
+        },
+        "Building3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.4,
+              0.3,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -60,
+              10,
+              50
+            ],
+            "Size": [
+              20,
+              20,
+              20
+            ]
+          }
+        },
+        "Building4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.3,
+              0.35,
+              0.3
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              60,
+              14,
+              -50
+            ],
+            "Size": [
+              20,
+              28,
+              20
+            ]
+          }
+        },
+        "Building5": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.4,
+              0.25,
+              0.35
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              60,
+              11,
+              0
+            ],
+            "Size": [
+              20,
+              22,
+              20
+            ]
+          }
+        },
+        "Building6": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.25,
+              0.3,
+              0.45
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              60,
+              18,
+              50
+            ],
+            "Size": [
+              20,
+              36,
+              20
+            ]
+          }
+        },
+        "Building7": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.3,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -30,
+              9,
+              -70
+            ],
+            "Size": [
+              24,
+              18,
+              16
+            ]
+          }
+        },
+        "Building8": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.3,
+              0.25,
+              0.35
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              30,
+              13,
+              -70
+            ],
+            "Size": [
+              24,
+              26,
+              16
+            ]
+          }
+        },
+        "Building9": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.4,
+              0.3,
+              0.25
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -30,
+              12,
+              70
+            ],
+            "Size": [
+              24,
+              24,
+              16
+            ]
+          }
+        },
+        "Building10": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.25,
+              0.35,
+              0.3
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              30,
+              8,
+              70
+            ],
+            "Size": [
+              24,
+              16,
+              16
+            ]
+          }
+        }
+      },
+      "Decor": {
+        "$className": "Folder",
+        "RamenCartBody": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.6,
+              0.3,
+              0.15
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              1.5,
+              -58
+            ],
+            "Size": [
+              6,
+              3,
+              4
+            ]
+          }
+        },
+        "RamenCartCanopy": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.85,
+              0.15,
+              0.15
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              4.5,
+              -58
+            ],
+            "Size": [
+              7,
+              1,
+              5
+            ]
+          }
+        },
+        "RamenCartCounter": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.5,
+              0.32,
+              0.18
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              3.5,
+              -58
+            ],
+            "Size": [
+              6,
+              0.5,
+              4
+            ]
+          }
+        },
+        "ToriiLeft": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.7,
+              0.1,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -6,
+              6,
+              75
+            ],
+            "Size": [
+              2,
+              12,
+              2
+            ]
+          }
+        },
+        "ToriiRight": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.7,
+              0.1,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              6,
+              6,
+              75
+            ],
+            "Size": [
+              2,
+              12,
+              2
+            ]
+          }
+        },
+        "ToriiTop": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.7,
+              0.1,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              0,
+              12,
+              75
+            ],
+            "Size": [
+              16,
+              2,
+              2
+            ]
+          }
+        },
+        "ToriiBeam": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.7,
+              0.1,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              0,
+              10,
+              75
+            ],
+            "Size": [
+              12,
+              1.5,
+              1.5
+            ]
+          }
+        },
+        "Tree1Trunk": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.2,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -55,
+              3,
+              -55
+            ],
+            "Size": [
+              2,
+              6,
+              2
+            ]
+          }
+        },
+        "Tree1Top": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.15,
+              0.5,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -55,
+              8,
+              -55
+            ],
+            "Shape": "Ball",
+            "Size": [
+              7,
+              7,
+              7
+            ]
+          }
+        },
+        "Tree2Trunk": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.2,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              55,
+              3,
+              -55
+            ],
+            "Size": [
+              2,
+              6,
+              2
+            ]
+          }
+        },
+        "Tree2Top": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.15,
+              0.5,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              55,
+              8,
+              -55
+            ],
+            "Shape": "Ball",
+            "Size": [
+              7,
+              7,
+              7
+            ]
+          }
+        },
+        "Tree3Trunk": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.2,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -55,
+              3,
+              55
+            ],
+            "Size": [
+              2,
+              6,
+              2
+            ]
+          }
+        },
+        "Tree3Top": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.15,
+              0.5,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -55,
+              8,
+              55
+            ],
+            "Shape": "Ball",
+            "Size": [
+              7,
+              7,
+              7
+            ]
+          }
+        },
+        "Tree4Trunk": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.35,
+              0.2,
+              0.1
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              55,
+              3,
+              55
+            ],
+            "Size": [
+              2,
+              6,
+              2
+            ]
+          }
+        },
+        "Tree4Top": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.15,
+              0.5,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              55,
+              8,
+              55
+            ],
+            "Shape": "Ball",
+            "Size": [
+              7,
+              7,
+              7
+            ]
+          }
+        },
+        "Crate1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.55,
+              0.4,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -14,
+              1,
+              -30
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        "Crate2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.55,
+              0.4,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -14,
+              1,
+              -28
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        "Crate3": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.55,
+              0.4,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              1,
+              30
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        "Crate4": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.55,
+              0.4,
+              0.2
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              1,
+              32
+            ],
+            "Size": [
+              2,
+              2,
+              2
+            ]
+          }
+        },
+        "Barrel1": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.3,
+              0.3,
+              0.35
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              -14,
+              1.5,
+              28
+            ],
+            "Shape": "Cylinder",
+            "Size": [
+              3,
+              2,
+              2
+            ]
+          }
+        },
+        "Barrel2": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Color": [
+              0.3,
+              0.3,
+              0.35
+            ],
+            "Material": "SmoothPlastic",
+            "Position": [
+              14,
+              1.5,
+              -32
+            ],
+            "Shape": "Cylinder",
+            "Size": [
+              3,
+              2,
+              2
+            ]
+          }
+        }
+      },
+      "Lighting": {
+        "$className": "Lighting",
+        "$properties": {
+          "Ambient": [
+            0.1,
+            0.08,
+            0.12
+          ],
+          "Brightness": 2,
+          "GlobalShadows": true,
+          "Outlines": false,
+          "Technology": "Voxel",
+          "ClockTime": 21,
+          "GeographicLatitude": 35
+        }
+      },
+      "SoundService": {
+        "$className": "SoundService",
+        "$properties": {
+          "RespectFilteringEnabled": true
+        }
       }
     }
   }
